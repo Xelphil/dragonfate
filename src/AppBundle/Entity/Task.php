@@ -9,6 +9,9 @@ use Doctrine\ORM\Mapping as ORM;
 class Task
 {
     /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      * @var int
      */
     private $id;

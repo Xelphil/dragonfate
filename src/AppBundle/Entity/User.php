@@ -40,7 +40,7 @@ class User
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Notification", mappedBy="noti_user")
      */
-    private $user_noti;
+    private $notificacion;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Proposal", mappedBy="propo_user")

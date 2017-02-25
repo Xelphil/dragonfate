@@ -10,6 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
 class Resource
 {
     /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      * @var int
      */
     private $id;

@@ -10,6 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
 class Notification
 {
     /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      * @var int
      */
     private $id;
@@ -35,7 +38,7 @@ class Notification
     private $descripcion;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="noti_user")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="notificacion")
      */
     private $noti_user;
     /**
