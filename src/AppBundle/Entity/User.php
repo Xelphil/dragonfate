@@ -5,10 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * User
- *
- * @ORM\Table(name="user")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+ * @ORM\Entity
  */
 class User
 {
@@ -34,6 +31,38 @@ class User
      * @ORM\Column(name="pass", type="string", length=80)
      */
     private $pass;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ReadBy", mappedBy="read_user")
+     */
+    private $user_read;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Notification", mappedBy="noti_user")
+     */
+    private $user_noti;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Proposal", mappedBy="propo_user")
+     */
+    private $user_propo;
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Coment", mappedBy="come_user")
+     */
+    private $user_come;
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Task", mappedBy="task_user")
+     */
+    private $user_task;
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Resource", mappedBy="reso_user")
+     */
+    private $user_reso;
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Error", mappedBy="erro_user")
+     */
+    private $user_erro;
+
 
     /**
      * Get id

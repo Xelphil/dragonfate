@@ -2,8 +2,10 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * Notification
+ * @ORM\Entity
  */
 class Notification
 {
@@ -32,6 +34,14 @@ class Notification
      */
     private $descripcion;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="noti_user")
+     */
+    private $noti_user;
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ReadBy", mappedBy="read_noti")
+     */
+    private $noti_read;
 
     /**
      * Get id

@@ -2,8 +2,10 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * Resource
+ * @ORM\Entity
  */
 class Resource
 {
@@ -42,6 +44,10 @@ class Resource
      */
     private $author;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="user_reso")
+     */
+    private $reso_user;
 
     /**
      * Get id

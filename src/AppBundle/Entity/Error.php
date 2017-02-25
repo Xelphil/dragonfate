@@ -1,9 +1,10 @@
 <?php
 
 namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Error
+ * @ORM\Entity
  */
 class Error
 {
@@ -31,6 +32,11 @@ class Error
      * @var string
      */
     private $descripcion;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="user_erro")
+     */
+    private $erro_user;
 
 
     /**

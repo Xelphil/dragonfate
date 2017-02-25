@@ -2,8 +2,10 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * Skill
+ * @ORM\Entity
  */
 class Skill
 {
@@ -21,6 +23,11 @@ class Skill
      * @var string
      */
     private $element;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Proposal", inversedBy="propo_skil")
+     */
+    private $skil_propo;
 
 
     /**

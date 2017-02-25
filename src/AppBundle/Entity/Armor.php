@@ -2,8 +2,10 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * Armor
+ * @ORM\Entity
  */
 class Armor
 {
@@ -21,6 +23,11 @@ class Armor
      * @var string
      */
     private $element;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Proposal", inversedBy="propo_armo")
+     */
+    private $armo_propo;
 
 
     /**

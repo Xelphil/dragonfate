@@ -1,9 +1,10 @@
 <?php
 
 namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Coment
+ * @ORM\Entity
  */
 class Coment
 {
@@ -32,6 +33,14 @@ class Coment
      */
     private $stateProposal;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="user_come")
+     */
+    private $come_user;
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Proposal", inversedBy="propo_come")
+     */
+    private $come_propo;
 
     /**
      * Get id

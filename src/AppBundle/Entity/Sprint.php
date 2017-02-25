@@ -2,8 +2,10 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * Sprint
+ * @ORM\Entity
  */
 class Sprint
 {
@@ -36,6 +38,11 @@ class Sprint
      * @var int
      */
     private $doneCost;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Task", inversedBy="task_spri")
+     */
+    private $spri_task;
 
 
     /**

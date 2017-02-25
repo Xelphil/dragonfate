@@ -1,9 +1,10 @@
 <?php
 
 namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Task
+ * @ORM\Entity
  */
 class Task
 {
@@ -41,6 +42,16 @@ class Task
      * @var int
      */
     private $priority;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="user_task")
+     */
+    private $task_user;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Sprint", mappedBy="spri_task")
+     */
+    private $task_spri;
 
 
     /**

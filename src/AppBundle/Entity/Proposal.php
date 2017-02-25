@@ -2,8 +2,10 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * Proposal
+ * @ORM\Entity
  */
 class Proposal
 {
@@ -41,6 +43,32 @@ class Proposal
      * @var string
      */
     private $url;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="user_propo")
+     */
+    private $propo_user;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Weapon", mappedBy="wea_propo")
+     */
+    private $propo_wea;
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Armor", mappedBy="armo_propo")
+     */
+    private $propo_armo;
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Skill", mappedBy="skil_propo")
+     */
+    private $propo_skil;
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Coment", mappedBy="come_propo")
+     */
+    private $propo_come;
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Other", mappedBy="othe_propo")
+     */
+    private $propo_othe;
 
 
     /**

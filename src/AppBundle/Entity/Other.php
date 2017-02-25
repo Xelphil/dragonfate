@@ -1,9 +1,10 @@
 <?php
 
 namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Other
+ * @ORM\Entity
  */
 class Other
 {
@@ -27,6 +28,10 @@ class Other
      */
     private $extraData3;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Proposal", inversedBy="propo_othe")
+     */
+    private $othe_propo;
 
     /**
      * Get id
