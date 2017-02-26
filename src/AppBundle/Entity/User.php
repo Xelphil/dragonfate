@@ -3,11 +3,12 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity
  */
-class User
+class User implements UserInterface
 {
     /**
      * @var int
@@ -23,14 +24,14 @@ class User
      *
      * @ORM\Column(name="nick", type="string", length=25, unique=true)
      */
-    private $nick;
+    private $username;
 
     /**
      * @var string
      *
      * @ORM\Column(name="pass", type="string", length=80)
      */
-    private $pass;
+    private $password;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\ReadBy", mappedBy="read_user")
@@ -75,27 +76,27 @@ class User
     }
 
     /**
-     * Set nick
+     * Set username
      *
-     * @param string $nick
+     * @param string $username
      *
      * @return User
      */
-    public function setNick($nick)
+    public function setUsername($username)
     {
-        $this->nick = $nick;
+        $this->username = $username;
 
         return $this;
     }
 
     /**
-     * Get nick
+     * Get username
      *
      * @return string
      */
-    public function getNick()
+    public function getUsername()
     {
-        return $this->nick;
+        return $this->username;
     }
 
     /**
@@ -105,21 +106,34 @@ class User
      *
      * @return User
      */
-    public function setPass($pass)
+    public function setPassword($password)
     {
-        $this->pass = $pass;
+        $this->password = $password;
 
         return $this;
     }
 
     /**
-     * Get pass
+     * Get password
      *
      * @return string
      */
-    public function getPass()
+    public function getPassword()
     {
-        return $this->pass;
+        return $this->password;
+    }
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+    public function eraseCredentials()
+    {
+
+    }
+    public function getRoles()
+    {
     }
 }
 
