@@ -1,0 +1,24 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Listado de Armors</h1>
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+        <tr>
+            <th class="col-sm-3">Id</th>
+            <th class="col-sm-3">Tier</th>
+            <th class="col-sm-3">Element</th>
+            <th class="col-sm-3">Proposal</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for armo in armor %}
+            <tr>
+                <td>{{ armor[0].id }}</td>
+                <td>{{ armor[0].tier }}</td>
+                <td>{{ armor[0].element }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
