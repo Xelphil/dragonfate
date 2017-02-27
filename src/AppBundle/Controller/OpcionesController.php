@@ -23,7 +23,7 @@ class OpcionesController extends Controller
             ->getQuery()
             ->getResult();
 
-        return $this->render(':home/Opciones:armor.html.twig', [
+        return $this->render('home/Opciones/armor.html.twig', [
         'armor' => $armor
     ]);
     }
