@@ -9,7 +9,16 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/home", name="usuarios")
+     * @Route("/", name="inicio")
+     */
+    public function indexAction()
+    {
+        // replace this example code with whatever you need
+        return $this->render('home/inicio.html.twig');
+    }
+    
+    /**
+     * @Route("/home", name="home")
      */
     public function usuariosAction()
     {
@@ -18,7 +27,6 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/")
      * @Route("/login", name="login")
      */
     public function loginAction(Request $request)
