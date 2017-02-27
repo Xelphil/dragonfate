@@ -25,6 +25,9 @@ security:
           form_login:
             check_path: /login
             login_path: /login
+          logout:
+            path:   /logout
+            target: /
         main:
           anonymous: ~
     access_control:
