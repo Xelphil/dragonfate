@@ -12,10 +12,6 @@ security:
                             roles: 'ROLE_USER'
 
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
-    providers:
-        in_memory:
-            memory: ~
-
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
@@ -33,7 +29,7 @@ security:
           pattern: ^/home
           http_basic: ~
         main:
-                  anonymous: ~
+          anonymous: ~
     access_control:
-            - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-            - { path: ^/home, roles: ROLE_USER }
+      - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/home, roles: ROLE_USER }
